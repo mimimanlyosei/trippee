@@ -61,6 +61,11 @@ This project will be developed iteratively using Agile principles.
 - Deploy project publicly
 
 ---
+## 🧭 Project Documentation
+
+- [📋 Definition of Workflow](docs/definition_of_workflow.md) – How work moves through the Trippee project.
+
+---
 
 ## 📜 License
 
