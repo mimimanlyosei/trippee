@@ -1,8 +1,8 @@
 # 🧭 Definition of Workflow – Trippee
 
-This document outlines how work is tracked and progressed through the Trippee project using GitHub Projects and Issues.
+This document outlines how work is tracked and progressed through the Trippee project using GitHub Issues and a Kanban-style board.
 
-## 🗂 Project Board Columns
+## 📋 Project Board Setup
 We use the GitHub Projects Kanban board template, with the following columns:
 
 - **Backlog**: A holding area for ideas and tasks. Tickets stay here until they have a full breakdown.
@@ -38,9 +38,11 @@ We use the GitHub Projects Kanban board template, with the following columns:
 ## 🏷️ Labels
 
 Issues are tagged with labels to provide context and aid filtering:
-- `MVP`, `enhancement`, `bug`, `testing`, `validation`, `documentation`, `refactor`, `research`, `blocked`, `planning`
 
-Use multiple labels when appropriate to describe the nature and status of the issue.
+- **Core labels**: `MVP`, `feature`, `bug`, `validation`, `testing`, `documentation`, `planning`, `infrastructure`
+- **Framework sprint labels**: `framework-sprint`, `flask`, `django`, `framework-rebuild`, `learning`, `api`, `phase-2`
+
+These labels help group issues by purpose, phase, and technical focus. They also identify items driven by Mimi’s personal learning plan (e.g., Flask/Django tasks).
 
 ---
 
@@ -49,6 +51,20 @@ Use multiple labels when appropriate to describe the nature and status of the is
 Each commit should:
 - Be descriptive (what, why)
 - Reference the related issue using `#issue_number`  
-  Example:  
+  Example:
   ```bash
   git commit -m "Add route visualisation script #8"
+  ```
+
+---
+
+## 📁 Where Work Lives
+
+- `/scripts`: Python scripts and logic
+- `/data`: Raw and cleaned datasets
+- `/notebooks`: Jupyter notebooks for EDA or quick tests
+- `/docs`: Planning, workflow, and roadmap documentation
+- `/trippee-flask/`: Flask framework implementation (optional UI/API for MVP)
+- `/trippee-django/`: Django experiments and feature rebuilds (used for Phase 2 learning)
+
+---
