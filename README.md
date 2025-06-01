@@ -45,20 +45,19 @@ I created Trippee as part of my transition into tech. It’s a showcase of:
 
 ---
 
-## 🗺️ Roadmap
+## 🛣️ Project Roadmap
 
-This project will be developed iteratively using Agile principles.
+Trippee is being developed in agile phases with an MVP-first approach, followed by iterative enhancements and a Django migration.
 
-### ✅ Phase 1 (In Progress)
-- [x] Create repo and initial structure
-- [x] Add README and project overview
-- [ ] Gather and clean location data
-- [ ] Map initial routes and basic visualizations
+📍 Check out the full roadmap here: [`/docs/trippee_project_roadmap.md`](./docs/trippee_project_roadmap.md)
 
-### 🔜 Phase 2
-- Add API integration for real-time travel data
-- Create simple front-end interface (Flask or Django)
-- Deploy project publicly
+Key highlights:
+- MVP includes Flask-based location viewing and basic route logic
+- REST API and viewer built in Flask
+- Later migration to Django for scalability and learning
+- Future roadmap includes map visualisation, trip exports, and deployment
+
+This project evolves alongside skill growth and project needs. 💪
 
 ---
 
