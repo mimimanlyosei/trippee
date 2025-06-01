@@ -61,6 +61,12 @@ This project will be developed iteratively using Agile principles.
 - Deploy project publicly
 
 ---
+
+## 🔧 Project Management
+- [Trippee – Phase 1 Development Board](https://github.com/users/mimimanlyosei/projects/3/views/1)
+
+---
+
 ## 🧭 Project Documentation
 
 - [📋 Definition of Workflow](docs/definition_of_workflow.md) – How work moves through the Trippee project.
