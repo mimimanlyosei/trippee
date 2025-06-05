@@ -6,13 +6,9 @@ import os
 # Step 1: URL to scarape
 url = "https://ivycollection.com/locations/"
 response = requests.get(url)
-print(response.status_code)
 soup = BeautifulSoup(response.text, "html.parser")
 
-# print(soup.prettify() [:3000]) # print the first 1000 charachters
-
 # Step 2: Extract restaurant data
-# restaurant_cards = soup.find_all("a", class_="location-img-box")
 cards = soup.select('.location-img-box')
 
 data = []
@@ -21,12 +17,28 @@ for card in cards:
     name = name_tag.text.strip() if name_tag else "No name"
     link = name_tag["href"] if name_tag and name_tag.has_attr("href") else "No link"
     description_tag = card.select_one('.img-desc')
-    location = description_tag.text.strip() if description_tag else "No location"
+    # Changing this location logic because it does't actually pull any area data.
+    # location = description_tag.text.strip() if description_tag else "No location"
 
-    print(name, location, link)
+    # New area info logic
+    if name.lower().startswith("the ivy"):
+        area = name.replace("The Ivy", "").split(",")[0].strip()
+    else:
+        area = "Unknown"
+
+    # test printing to see what is being extracted
+    print("NAME:", name)
+    print("DESC:", description_tag)
+    print("TEXT:", description_tag.text.strip() if description_tag else "None")
+    # Result: description_tag exits but its empty and that's why it doesn't give
+    # any info to the area column
+
+
+
+
     data.append({
         "name": name,
-        "location": location,
+        "area": area if area else "Unknown",
         "url": link
     })
 
@@ -34,7 +46,7 @@ for card in cards:
 output_folder = os.path.join("data")
 os.makedirs(output_folder, exist_ok=True)
 output_path = os.path.join(output_folder, "ivy_locations.csv")
-df = pd.DataFrame(data)
+df = pd.DataFrame(data, columns=["name", "area", "url"])
 df.to_csv(output_path, index=False)
 
 print(f"✅ Ivy locations saved to {output_path}")
