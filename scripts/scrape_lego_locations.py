@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-from pathlib import Path
+import os
 
 # Step 1: URL to scarape
 url = "https://ivycollection.com/locations/"
@@ -43,7 +43,6 @@ for card in cards:
     })
 
 # Step 3: Save to CSV in data folder
-
 output_folder = Path("data")
 output_folder.mkdir(parents=True, exist_ok=True)
 
