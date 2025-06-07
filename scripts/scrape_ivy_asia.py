@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-import os
+from pathlib import Path
 
 # Step 1: URL to scarape
 url = "https://ivycollection.com/locations/"
